@@ -20,7 +20,53 @@ public class EmsService {
 
     // Method to add an employee
     public void addEmployee(Employee employee) {
-        employeeList.add(employee);
+        Employee employee1 = getEmployeeDetailsFromUserInput();
+        employeeList.add(employee1);
+    }
+    Scanner scanner = new Scanner(System.in);
+
+    // Method to get employee details from user input
+    public Employee getEmployeeDetailsFromUserInput() {
+        System.out.println("Enter employee details:");
+
+        // EmployeeInfo details
+        System.out.print("Enter employee ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter employee name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter employee salary: ");
+        String salary = scanner.nextLine();
+        System.out.print("Enter employee age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter employee current company: ");
+        String currentCompany = scanner.nextLine();
+        System.out.print("Enter employee previous company: ");
+        String prevCompany = scanner.nextLine();
+
+        EmployeeInfo info = new EmployeeInfo(id, name, salary, age, currentCompany, prevCompany);
+
+        // EmployeeAddressDetails details
+        System.out.print("Enter door number: ");
+        int doorNo = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter street: ");
+        String street = scanner.nextLine();
+        System.out.print("Enter city: ");
+        String city = scanner.nextLine();
+        System.out.print("Enter state: ");
+        String state = scanner.nextLine();
+        System.out.print("Enter country: ");
+        String country = scanner.nextLine();
+        System.out.print("Enter pin code: ");
+        int pinCode = scanner.nextInt();
+
+        EmployeeAddressDetails address = new EmployeeAddressDetails(doorNo, street, city, state, country, pinCode);
+
+        // Create Employee object and add to the list
+        Employee employee = new Employee(info, address);
+        return employee;
     }
 
     // Method to update an employee
