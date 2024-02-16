@@ -7,6 +7,11 @@ public class EmployeeAddressDetails {
     private String state;
     private String country;
     private int pinCode;
+    
+    public EmployeeAddressDetails()
+    {
+    	
+    }
 
     // Constructor
     public EmployeeAddressDetails(int doorNo, String street, String city, String state, String country, int pinCode) {

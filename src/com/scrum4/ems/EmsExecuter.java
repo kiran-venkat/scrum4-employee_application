@@ -1,6 +1,7 @@
 package com.scrum4.ems;
 import java.util.*;
 import com.scrum4.ems.data.admin.*;
+import com.scrum4.ems.employee.*;
 import com.scrum4.ems.exceptions.UnauthorizedException;
 import com.scrum4.ems.service.EmsService;
 public class EmsExecuter {
@@ -24,6 +25,39 @@ public class EmsExecuter {
 				throw new UnauthorizedException("Unauthorized adminName and password");
 			}
 			EmsService service=new EmsService();
+			EmployeeInfo empInfo=new EmployeeInfo();
+			EmployeeAddressDetails empAddress=new EmployeeAddressDetails();
+			boolean showChoice=true;
+			while(showChoice)
+			{
+				System.out.println("1.Add Employee Details");
+				System.out.println("2.Update Employee Details");
+				System.out.println("3.View Employee Details");
+				System.out.println("4.View All Employee Details");
+				System.out.println("5.Sort Employee Details");
+				System.out.println("Enter your Choice");
+				int serviceChoice=sc.nextInt();
+				switch(serviceChoice)
+				{
+				case 1:
+					
+					Employee employee=new Employee(empInfo,empAddress);
+					service.addEmployee(employee);
+					break;
+				case 2:
+					
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				}
+				
+				
+				
+			}
 			System.out.println("Do u want to login in again");
 			char choice=sc.next().charAt(0);
 			if(choice=='y')

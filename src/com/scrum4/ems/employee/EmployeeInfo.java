@@ -6,7 +6,11 @@ public class EmployeeInfo {
     private String salary; 
     private int age;
     private String currentCompany;  
-    private String prevCompany;  
+    private String prevCompany; 
+     public EmployeeInfo()
+     {
+    	 
+     }
     
     // Constructor
     public EmployeeInfo(int id, String name, String salary, int age, String currentCompany, String prevCompany) {
