@@ -16,6 +16,10 @@ public class AdminDetails {
     	 
     	 
      }
+     public AdminDetails()
+     {
+    	 
+     }
      
      public AdminDetails(int adminId, String adminName, String adminPassword, String adminRole) {
  		
