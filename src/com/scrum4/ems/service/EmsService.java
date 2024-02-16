@@ -2,8 +2,8 @@ package com.scrum4.ems.service;
 
 import com.scrum4.ems.employee.Employee;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class EmsService {
@@ -11,7 +11,7 @@ public class EmsService {
     private List<Employee> employeeList;
 
     public EmsService() {
-        this.employeeList = new ArrayList<>();
+        this.employeeList = new LinkedList<>(); // Use LinkedList here
     }
 
     // Method to add an employee
