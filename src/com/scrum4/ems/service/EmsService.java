@@ -5,19 +5,17 @@ import com.scrum4.ems.employee.EmployeeAddressDetails;
 import com.scrum4.ems.employee.EmployeeInfo;
 
 import java.util.Collections;
-//import java.util.HashMap;
+
 import java.util.LinkedList;
-//import java.util.Map;
+
 import java.util.Scanner;
 
 public class EmsService {
 
-//<<<<<<< HEAD
-//    private Map<Integer,Employee> employeeList;
-//=======
+
 	private static LinkedList<Employee> employeeList = new LinkedList<Employee>();
 	public Employee emp = new Employee();
-//>>>>>>> 2f6082e790367ba51e2cb004cbf72c6b05cc0678
+
 
 	public EmsService() {
 		// Use LinkedList here
@@ -37,13 +35,7 @@ public class EmsService {
 		employeeList.add(employee2);
 	}
 
-	// Method to add dummy employees
-
-	// Method to add an employee
-//<<<<<<< HEAD
-//    public void addEmployee(Employee employee,EmployeeInfo empInfo) {
-//        employeeList.put(empInfo.getId(),employee);
-//=======
+	
 	public void addEmployee(Employee employee) {
 		Employee employee1 = getEmployeeDetailsFromUserInput();
 		employeeList.add(employee1);
@@ -51,7 +43,7 @@ public class EmsService {
 
 	Scanner scanner = new Scanner(System.in);
 
-	// Method to get employee details from user input
+	
 	public Employee getEmployeeDetailsFromUserInput() {
 		System.out.println("Enter employee details:");
 
@@ -93,18 +85,21 @@ public class EmsService {
 		// Create Employee object and add to the list
 		Employee employee = new Employee(info, address);
 		return employee;
-//>>>>>>> 2f6082e790367ba51e2cb004cbf72c6b05cc0678
+
 	}
 
 	// Method to update an employee
 
 	public void updateEmployee(int employeeId) {
 		// Assuming 'service' is an instance of your service class
-		Employee employee = emp.getEmployeeById(employeeId);
+		//Employee emp = new Employee();
+		
+		Employee employee = getEmployeeId(employeeId);
+		
 
 		if (employee != null) {
 			
-			@SuppressWarnings("resource")
+			
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Choose what you want to update:");
@@ -115,6 +110,7 @@ public class EmsService {
 			switch (choice) {
 			case 1:
 				updateEmployeeInfo(employee.getInfo());
+				
 				break;
 			case 2:
 				updateEmployeeAddress(employee.getAddress());
@@ -168,7 +164,7 @@ public class EmsService {
 			System.out.println("Invalid choice.");
 		}
 
-		scanner.close();
+		
 	}
 
 	// Method to update employee address details
@@ -216,7 +212,7 @@ public class EmsService {
 			System.out.println("Invalid choice.");
 		}
 
-		scanner.close();
+		
 	}
 
 	// Method to view an employee by ID
@@ -231,12 +227,9 @@ public class EmsService {
 		return null; // Employee not found
 	}
 
-	// Method to view all employees
-//<<<<<<< HEAD
-	// public Map<Integer,Employee> viewAllEmployees() {
-//=======
+	
 	public LinkedList<Employee> viewAllEmployees() {
-//>>>>>>> 2f6082e790367ba51e2cb004cbf72c6b05cc0678
+
 		return employeeList;
 	}
 
@@ -247,6 +240,17 @@ public class EmsService {
 
 	public void sortEmployeesByID() {
 		Collections.sort(employeeList, (e1, e2) -> Integer.compare(e1.getId(), e2.getId()));
+	}
+	public Employee getEmployeeId(int employeeId)
+	{
+		for(Employee list:employeeList)
+		{
+			if(list.getId()==employeeId)
+			{
+				return list;
+			}
+		}
+		return null;
 	}
 
 }

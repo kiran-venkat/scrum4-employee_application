@@ -11,7 +11,7 @@ public class EmsExecuter {
 		String adminName;
 		String adminPassword;
 		
-		@SuppressWarnings("resource")
+		
 		Scanner sc = new Scanner(System.in);
 		boolean flag = false;
 		do {
@@ -60,6 +60,7 @@ public class EmsExecuter {
 							if (detail.getAdminRole() == "Admin_ALL") {
 								System.out.println("Enter the Employees ID to be updated");
 								int employeeId = sc.nextInt();
+								
 								service.updateEmployee(employeeId);
 
 								break;
@@ -166,8 +167,10 @@ public class EmsExecuter {
 
 			} catch (UnauthorizedException exception) {
 				System.out.println(exception.getMessage());
+				EmsExecuter.main(new String[0]);
 			}
 		} while (flag);
+		sc.close();
 
 	}
 

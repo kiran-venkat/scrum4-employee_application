@@ -1,7 +1,7 @@
 package com.scrum4.ems.employee;
 
 public class Employee {
-	private EmployeeInfo info;
+	private EmployeeInfo info=new EmployeeInfo();
 	private EmployeeAddressDetails address;
 
 	// Constructor
@@ -121,7 +121,9 @@ public class Employee {
 	}
 
 	public Employee getEmployeeById(int employeeId) {
+		
 		if (this.info.getId() == employeeId) {
+			
 			return this;
 		} else {
 			return null;
