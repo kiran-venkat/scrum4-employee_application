@@ -12,9 +12,7 @@ public class AdminDetails {
     	 AdminDetails admin_3=new AdminDetails(003,"Kiran","kiran@23","Admin_VIEW");
     	 adminDetails.add(admin_1);
     	 adminDetails.add(admin_2);
-    	 adminDetails.add(admin_3);
-    	 
-    	 
+    	 adminDetails.add(admin_3);	 
      }
      public AdminDetails()
      {

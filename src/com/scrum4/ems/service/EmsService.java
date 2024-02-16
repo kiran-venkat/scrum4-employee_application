@@ -21,6 +21,26 @@ public class EmsService {
 
     public EmsService() {
         this.employeeList = new LinkedList<>(); // Use LinkedList here
+
+        // Adding dummy employees
+        addDummyEmployees();
+    }
+
+    // Method to add dummy employees
+    private void addDummyEmployees() {
+        // Employee 1
+        EmployeeInfo info1 = new EmployeeInfo(1, "John Doe", "5000", 30, "ABC Corp", "XYZ Ltd");
+        EmployeeAddressDetails address1 = new EmployeeAddressDetails(123, "Main St", "City", "State", "Country", 12345);
+        Employee employee1 = new Employee(info1, address1);
+        employeeList.add(employee1);
+
+        // Employee 2
+        EmployeeInfo info2 = new EmployeeInfo(2, "Jane Smith", "6000", 35, "DEF Corp", "PQR Ltd");
+        EmployeeAddressDetails address2 = new EmployeeAddressDetails(456, "Oak St", "City", "State", "Country", 67890);
+        Employee employee2 = new Employee(info2, address2);
+        employeeList.add(employee2);
+
+        // Add more dummy employees as needed
     }
 
     // Method to add an employee
@@ -110,7 +130,6 @@ public class EmsService {
     
     
 
-    // Method to update employee info
  // Method to update employee info
     private void updateEmployeeInfo(EmployeeInfo info) {
         Scanner scanner = new Scanner(System.in);
@@ -156,7 +175,6 @@ public class EmsService {
     }
 
     // Method to update employee address details
- // Method to update employee address details
     private void updateEmployeeAddress(EmployeeAddressDetails address) {
         Scanner scanner = new Scanner(System.in);
 

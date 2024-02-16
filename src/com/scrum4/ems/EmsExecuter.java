@@ -51,10 +51,19 @@ public class EmsExecuter {
 					
 					break;
 				case 3:
-					System.out.println("Enter the Employees ID to be updated");
-					int searchEmployeeID=sc.nextInt();
-					service.viewEmployee(searchEmployeeID);
-					break;
+				    System.out.println("Enter the Employees ID to be searched");
+				    int searchEmployeeID = sc.nextInt();
+				    Employee foundEmployee = service.viewEmployee(searchEmployeeID);
+
+				    if (foundEmployee != null) {
+				        System.out.println("Employee found!");
+				        System.out.println("Employee ID: " + foundEmployee.getInfo().getId());
+				        System.out.println("Employee Name: " + foundEmployee.getInfo().getName());
+				    } else {
+				        System.out.println("Employee not found.");
+				    }
+				    break;
+
 				case 4:
 					LinkedList<Employee> employeeDetails = service.viewAllEmployees();
 					
@@ -68,13 +77,6 @@ public class EmsExecuter {
 							System.out.println("Employee Age: " + employeeDet.getInfo().getAge());
 							System.out.println("Employee Current Company: " + employeeDet.getInfo().getCurrentCompany());
 							System.out.println("Employee Previous Company: " + employeeDet.getInfo().getPrevCompany());
-							System.out.println("Employee Address Details:");
-							System.out.println("Door No: " + employeeDet.getAddress().getDoorNo());
-							System.out.println("Street: " + employeeDet.getAddress().getStreet());
-							System.out.println("City: " + employeeDet.getAddress().getCity());
-							System.out.println("State: " + employeeDet.getAddress().getState());
-							System.out.println("Country: " + employeeDet.getAddress().getCountry());
-							System.out.println("Pin Code: " + employeeDet.getAddress().getPinCode());
 							System.out.println(); // Add an empty line for better readability
 						}
 					} else {
@@ -97,13 +99,6 @@ public class EmsExecuter {
 							System.out.println("Employee Age: " + employeeDet1.getInfo().getAge());
 							System.out.println("Employee Current Company: " + employeeDet1.getInfo().getCurrentCompany());
 							System.out.println("Employee Previous Company: " + employeeDet1.getInfo().getPrevCompany());
-							System.out.println("Employee Address Details:");
-							System.out.println("Door No: " + employeeDet1.getAddress().getDoorNo());
-							System.out.println("Street: " + employeeDet1.getAddress().getStreet());
-							System.out.println("City: " + employeeDet1.getAddress().getCity());
-							System.out.println("State: " + employeeDet1.getAddress().getState());
-							System.out.println("Country: " + employeeDet1.getAddress().getCountry());
-							System.out.println("Pin Code: " + employeeDet1.getAddress().getPinCode());
 							System.out.println(); // Add an empty line for better readability
 						}
 					} else {
