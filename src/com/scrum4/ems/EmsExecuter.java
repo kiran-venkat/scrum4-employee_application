@@ -21,6 +21,8 @@ public class EmsExecuter {
 			
 			try {
 			AdminDetails detail=adminVerification(adminName, adminPassword);
+			
+			
 			if(adminVerification(adminName,adminPassword)==null)
 			{
 				throw new UnauthorizedException("Unauthorized adminName and password");
@@ -51,8 +53,10 @@ public class EmsExecuter {
 						throw new UnauthorizedException("Access denied for this admin");
 					}
 				} catch (UnauthorizedException e){
-					e.getMessage();
+					System.out.println( e.getMessage());
+					break;
 				}
+					
 				case 2:
 				try{
 					if (detail.getAdminRole()=="Admin_ALL"){
@@ -65,8 +69,10 @@ public class EmsExecuter {
 					throw new UnauthorizedException("Access denied for this admin");
 				}
 			} catch (UnauthorizedException e){
-				e.getMessage();
+				System.out.println( e.getMessage());
+				break;
 			}
+				
 				case 3:
 				    System.out.println("Enter the Employees ID to be searched");
 				    int searchEmployeeID = sc.nextInt();
@@ -139,7 +145,8 @@ public class EmsExecuter {
 					throw new UnauthorizedException("Access denied for this admin");
 				}
 			} catch (UnauthorizedException e){
-				e.getMessage();
+				System.out.println( e.getMessage());
+				break;
 			}
 				case 6:
 					System.out.println("Do u want to login in again");
@@ -147,6 +154,7 @@ public class EmsExecuter {
 					if(choice=='y')
 					{
 						flag=true;
+						EmsExecuter.main(new String[0]);
 						break;
 					}
 					else {
