@@ -100,6 +100,7 @@ public class EmsService {
 		if (employee != null) {
 			
 			
+			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.println("Choose what you want to update:");
@@ -125,6 +126,7 @@ public class EmsService {
 
 	// Method to update employee info
 	private void updateEmployeeInfo(EmployeeInfo info) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Choose what you want to update:");
@@ -169,6 +171,7 @@ public class EmsService {
 
 	// Method to update employee address details
 	private void updateEmployeeAddress(EmployeeAddressDetails address) {
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Choose what you want to update in the address:");
@@ -218,8 +221,7 @@ public class EmsService {
 	// Method to view an employee by ID
 	public Employee viewEmployee(int employeeId) {
 		for (Employee employee : employeeList) {
-//        	Employee emp=new Employee();
-//        	 emp=employeeList.get(employee);
+
 			if (employee.getInfo().getId() == employeeId) {
 				return employee;
 			}

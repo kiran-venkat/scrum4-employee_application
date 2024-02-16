@@ -62,6 +62,7 @@ public class EmsExecuter {
 								int employeeId = sc.nextInt();
 								
 								service.updateEmployee(employeeId);
+								System.out.println("Update Successfully");
 
 								break;
 							} else {
@@ -81,6 +82,25 @@ public class EmsExecuter {
 							System.out.println("Employee found!");
 							System.out.println("Employee ID: " + foundEmployee.getInfo().getId());
 							System.out.println("Employee Name: " + foundEmployee.getInfo().getName());
+							System.out.println("Employee Salary: " + foundEmployee.getInfo().getSalary());
+							System.out.println("Employee Age: " + foundEmployee.getInfo().getAge());
+							System.out.println(
+									"Employee Current Company: " + foundEmployee.getInfo().getCurrentCompany());
+							System.out.println(
+									"Employee Previous Company: " + foundEmployee.getInfo().getPrevCompany());
+							System.out.println(
+									"Employee Door No: " + foundEmployee.getAddress().getDoorNo());
+							System.out.println(
+									"Employee City: " + foundEmployee.getAddress().getCity());
+							System.out.println(
+									"Employee Country: " + foundEmployee.getAddress().getCountry());
+							System.out.println(
+									"Employee State: " + foundEmployee.getAddress().getState());
+							System.out.println(
+									"Employee Pincode: " + foundEmployee.getAddress().getPinCode());
+							System.out.println(
+									"Employee Street: " + foundEmployee.getAddress().getStreet());
+							System.out.println(); // Add an empty line for better readability
 						} else {
 							System.out.println("Employee not found.");
 						}
@@ -101,6 +121,18 @@ public class EmsExecuter {
 										"Employee Current Company: " + employeeDet.getInfo().getCurrentCompany());
 								System.out.println(
 										"Employee Previous Company: " + employeeDet.getInfo().getPrevCompany());
+								System.out.println(
+										"Employee Door No: " + employeeDet.getAddress().getDoorNo());
+								System.out.println(
+										"Employee City: " + employeeDet.getAddress().getCity());
+								System.out.println(
+										"Employee Country: " + employeeDet.getAddress().getCountry());
+								System.out.println(
+										"Employee State: " + employeeDet.getAddress().getState());
+								System.out.println(
+										"Employee Pincode: " + employeeDet.getAddress().getPinCode());
+								System.out.println(
+										"Employee Street: " + employeeDet.getAddress().getStreet());
 								System.out.println(); // Add an empty line for better readability
 							}
 						} else {
@@ -132,10 +164,22 @@ public class EmsExecuter {
 										System.out.println("Employee Name: " + employeeDet1.getInfo().getName());
 										System.out.println("Employee Salary: " + employeeDet1.getInfo().getSalary());
 										System.out.println("Employee Age: " + employeeDet1.getInfo().getAge());
-										System.out.println("Employee Current Company: "
-												+ employeeDet1.getInfo().getCurrentCompany());
-										System.out.println("Employee Previous Company: "
-												+ employeeDet1.getInfo().getPrevCompany());
+										System.out.println(
+												"Employee Current Company: " + employeeDet1.getInfo().getCurrentCompany());
+										System.out.println(
+												"Employee Previous Company: " + employeeDet1.getInfo().getPrevCompany());
+										System.out.println(
+												"Employee Door No: " + employeeDet1.getAddress().getDoorNo());
+										System.out.println(
+												"Employee City: " + employeeDet1.getAddress().getCity());
+										System.out.println(
+												"Employee Country: " + employeeDet1.getAddress().getCountry());
+										System.out.println(
+												"Employee State: " + employeeDet1.getAddress().getState());
+										System.out.println(
+												"Employee Pincode: " + employeeDet1.getAddress().getPinCode());
+										System.out.println(
+												"Employee Street: " + employeeDet1.getAddress().getStreet());
 										System.out.println(); // Add an empty line for better readability
 									}
 								} else {
@@ -167,7 +211,10 @@ public class EmsExecuter {
 
 			} catch (UnauthorizedException exception) {
 				System.out.println(exception.getMessage());
+				System.out.println("Try again");
+
 				EmsExecuter.main(new String[0]);
+
 			}
 		} while (flag);
 		sc.close();
