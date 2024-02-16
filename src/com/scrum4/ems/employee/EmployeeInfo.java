@@ -1,74 +1,73 @@
 package com.scrum4.ems.employee;
 
 public class EmployeeInfo {
-    private int id;
-    private String name;
-    private String salary; 
-    private int age;
-    private String currentCompany;  
-    private String prevCompany; 
-     public EmployeeInfo()
-     {
-    	 
-     }
-    
-    // Constructor
-    public EmployeeInfo(int id, String name, String salary, int age, String currentCompany, String prevCompany) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.age = age;
-        this.currentCompany = currentCompany;
-        this.prevCompany = prevCompany;
-    }
-    
+	private int id;
+	private String name;
+	private String salary;
+	private int age;
+	private String currentCompany;
+	private String prevCompany;
 
-    // Getter and Setter methods
-    public int getId() {
-        return id;
-    }
+	public EmployeeInfo() {
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	}
 
-    public String getName() {
-        return name;
-    }
+	// Constructor
+	public EmployeeInfo(int id, String name, String salary, int age, String currentCompany, String prevCompany) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.age = age;
+		this.currentCompany = currentCompany;
+		this.prevCompany = prevCompany;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	// Getter and Setter methods
+	public int getId() {
+		return id;
+	}
 
-    public String getSalary() {
-        return salary;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public String getSalary() {
+		return salary;
+	}
 
-    public String getCurrentCompany() {
-        return currentCompany;
-    }
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
 
-    public void setCurrentCompany(String currentCompany) {
-        this.currentCompany = currentCompany;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public String getPrevCompany() {
-        return prevCompany;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    public void setPrevCompany(String prevCompany) {
-        this.prevCompany = prevCompany;
-    }
+	public String getCurrentCompany() {
+		return currentCompany;
+	}
+
+	public void setCurrentCompany(String currentCompany) {
+		this.currentCompany = currentCompany;
+	}
+
+	public String getPrevCompany() {
+		return prevCompany;
+	}
+
+	public void setPrevCompany(String prevCompany) {
+		this.prevCompany = prevCompany;
+	}
 }

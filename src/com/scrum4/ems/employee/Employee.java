@@ -1,133 +1,130 @@
 package com.scrum4.ems.employee;
 
 public class Employee {
-    private EmployeeInfo info;
-    private EmployeeAddressDetails address;
+	private EmployeeInfo info;
+	private EmployeeAddressDetails address;
 
-    // Constructor
-    public Employee() {
-    	
-    }
-    
-    public Employee(EmployeeInfo info, EmployeeAddressDetails address) {
-        this.info = info;
-        this.address = address;
-    }
+	// Constructor
+	public Employee() {
 
-    
+	}
 
-    public EmployeeInfo getInfo() {
-        return info;
-    }
+	public Employee(EmployeeInfo info, EmployeeAddressDetails address) {
+		this.info = info;
+		this.address = address;
+	}
 
-    public EmployeeAddressDetails getAddress() {
-        return address;
-    }
+	public EmployeeInfo getInfo() {
+		return info;
+	}
 
-    
-    // Getter and Setter methods for EmployeeInfo
-    public int getId() {
-        return info.getId();
-    }
+	public EmployeeAddressDetails getAddress() {
+		return address;
+	}
 
-    public void setId(int id) {
-        info.setId(id);
-    }
+	// Getter and Setter methods for EmployeeInfo
+	public int getId() {
+		return info.getId();
+	}
 
-    public String getName() {
-        return info.getName();
-    }
+	public void setId(int id) {
+		info.setId(id);
+	}
 
-    public void setName(String name) {
-        info.setName(name);
-    }
+	public String getName() {
+		return info.getName();
+	}
 
-    public String getSalary() {
-        return info.getSalary();
-    }
+	public void setName(String name) {
+		info.setName(name);
+	}
 
-    public void setSalary(String salary) {
-        info.setSalary(salary);
-    }
+	public String getSalary() {
+		return info.getSalary();
+	}
 
-    public int getAge() {
-        return info.getAge();
-    }
+	public void setSalary(String salary) {
+		info.setSalary(salary);
+	}
 
-    public void setAge(int age) {
-        info.setAge(age);
-    }
+	public int getAge() {
+		return info.getAge();
+	}
 
-    public String getCurrentCompany() {
-        return info.getCurrentCompany();
-    }
+	public void setAge(int age) {
+		info.setAge(age);
+	}
 
-    public void setCurrentCompany(String currentCompany) {
-        info.setCurrentCompany(currentCompany);
-    }
+	public String getCurrentCompany() {
+		return info.getCurrentCompany();
+	}
 
-    public String getPrevCompany() {
-        return info.getPrevCompany();
-    }
+	public void setCurrentCompany(String currentCompany) {
+		info.setCurrentCompany(currentCompany);
+	}
 
-    public void setPrevCompany(String prevCompany) {
-        info.setPrevCompany(prevCompany);
-    }
+	public String getPrevCompany() {
+		return info.getPrevCompany();
+	}
 
-    // Getter and Setter methods for EmployeeAddressDetails
-    public int getDoorNo() {
-        return address.getDoorNo();
-    }
+	public void setPrevCompany(String prevCompany) {
+		info.setPrevCompany(prevCompany);
+	}
 
-    public void setDoorNo(int doorNo) {
-        address.setDoorNo(doorNo);
-    }
+	// Getter and Setter methods for EmployeeAddressDetails
+	public int getDoorNo() {
+		return address.getDoorNo();
+	}
 
-    public String getStreet() {
-        return address.getStreet();
-    }
+	public void setDoorNo(int doorNo) {
+		address.setDoorNo(doorNo);
+	}
 
-    public void setStreet(String street) {
-        address.setStreet(street);
-    }
+	public String getStreet() {
+		return address.getStreet();
+	}
 
-    public String getCity() {
-        return address.getCity();
-    }
+	public void setStreet(String street) {
+		address.setStreet(street);
+	}
 
-    public void setCity(String city) {
-        address.setCity(city);
-    }
+	public String getCity() {
+		return address.getCity();
+	}
 
-    public String getState() {
-        return address.getState();
-    }
+	public void setCity(String city) {
+		address.setCity(city);
+	}
 
-    public void setState(String state) {
-        address.setState(state);
-    }
+	public String getState() {
+		return address.getState();
+	}
 
-    public String getCountry() {
-        return address.getCountry();
-    }
+	public void setState(String state) {
+		address.setState(state);
+	}
 
-    public void setCountry(String country) {
-        address.setCountry(country);
-    }
+	public String getCountry() {
+		return address.getCountry();
+	}
 
-    public int getPinCode() {
-        return address.getPinCode();
-    }
+	public void setCountry(String country) {
+		address.setCountry(country);
+	}
 
-    public void setPinCode(int pinCode) {
-        address.setPinCode(pinCode);
-    }
+	public int getPinCode() {
+		return address.getPinCode();
+	}
 
-    public Employee getEmployeeById(int employeeId) {
-        if (this.info.getId() == employeeId) {
-            return this;
-        } else {
-            return null;
-        }
-    }
+	public void setPinCode(int pinCode) {
+		address.setPinCode(pinCode);
+	}
+
+	public Employee getEmployeeById(int employeeId) {
+		if (this.info.getId() == employeeId) {
+			return this;
+		} else {
+			return null;
+		}
+	}
 }
