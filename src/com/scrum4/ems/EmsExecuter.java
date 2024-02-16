@@ -51,10 +51,19 @@ public class EmsExecuter {
 					
 					break;
 				case 3:
-					System.out.println("Enter the Employees ID to be updated");
-					int searchEmployeeID=sc.nextInt();
-					service.viewEmployee(searchEmployeeID);
-					break;
+				    System.out.println("Enter the Employees ID to be searched");
+				    int searchEmployeeID = sc.nextInt();
+				    Employee foundEmployee = service.viewEmployee(searchEmployeeID);
+
+				    if (foundEmployee != null) {
+				        System.out.println("Employee found!");
+				        System.out.println("Employee ID: " + foundEmployee.getInfo().getId());
+				        System.out.println("Employee Name: " + foundEmployee.getInfo().getName());
+				    } else {
+				        System.out.println("Employee not found.");
+				    }
+				    break;
+
 				case 4:
 					LinkedList<Employee> employeeDetails = service.viewAllEmployees();
 					
