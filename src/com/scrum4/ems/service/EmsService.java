@@ -44,53 +44,99 @@ public class EmsService {
     }
 
     // Method to update employee info
+ // Method to update employee info
     private void updateEmployeeInfo(EmployeeInfo info) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter employee name:");
-        info.setName(scanner.nextLine());
+        System.out.println("Choose what you want to update:");
+        System.out.println("1. Employee name");
+        System.out.println("2. Employee salary");
+        System.out.println("3. Employee age");
+        System.out.println("4. Employee current company");
+        System.out.println("5. Employee previous company");
 
-        System.out.println("Enter employee salary:");
-        info.setSalary(scanner.nextLine());
-
-        System.out.println("Enter employee age:");
-        info.setAge(scanner.nextInt());
-
+        int choice = scanner.nextInt();
         scanner.nextLine(); // Consume newline
-        System.out.println("Enter employee current company:");
-        info.setCurrentCompany(scanner.nextLine());
 
-        System.out.println("Enter employee previous company:");
-        info.setPrevCompany(scanner.nextLine());
-        
+        switch (choice) {
+            case 1:
+                System.out.println("Enter employee name:");
+                info.setName(scanner.nextLine());
+                break;
+            case 2:
+                System.out.println("Enter employee salary:");
+                info.setSalary(scanner.nextLine());
+                break;
+            case 3:
+                System.out.println("Enter employee age:");
+                info.setAge(scanner.nextInt());
+                break;
+            case 4:
+                scanner.nextLine(); // Consume newline
+                System.out.println("Enter employee current company:");
+                info.setCurrentCompany(scanner.nextLine());
+                break;
+            case 5:
+                scanner.nextLine(); // Consume newline
+                System.out.println("Enter employee previous company:");
+                info.setPrevCompany(scanner.nextLine());
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+
         scanner.close();
     }
 
     // Method to update employee address details
+ // Method to update employee address details
     private void updateEmployeeAddress(EmployeeAddressDetails address) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter door number:");
-        address.setDoorNo(scanner.nextInt());
+        System.out.println("Choose what you want to update in the address:");
+        System.out.println("1. Door number");
+        System.out.println("2. Street");
+        System.out.println("3. City");
+        System.out.println("4. State");
+        System.out.println("5. Country");
+        System.out.println("6. Pin code");
 
+        int choice = scanner.nextInt();
         scanner.nextLine(); // Consume newline
-        System.out.println("Enter street:");
-        address.setStreet(scanner.nextLine());
 
-        System.out.println("Enter city:");
-        address.setCity(scanner.nextLine());
+        switch (choice) {
+            case 1:
+                System.out.println("Enter door number:");
+                address.setDoorNo(scanner.nextInt());
+                break;
+            case 2:
+                scanner.nextLine(); // Consume newline
+                System.out.println("Enter street:");
+                address.setStreet(scanner.nextLine());
+                break;
+            case 3:
+                System.out.println("Enter city:");
+                address.setCity(scanner.nextLine());
+                break;
+            case 4:
+                System.out.println("Enter state:");
+                address.setState(scanner.nextLine());
+                break;
+            case 5:
+                System.out.println("Enter country:");
+                address.setCountry(scanner.nextLine());
+                break;
+            case 6:
+                System.out.println("Enter pin code:");
+                address.setPinCode(scanner.nextInt());
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
 
-        System.out.println("Enter state:");
-        address.setState(scanner.nextLine());
-
-        System.out.println("Enter country:");
-        address.setCountry(scanner.nextLine());
-
-        System.out.println("Enter pin code:");
-        address.setPinCode(scanner.nextInt());
-        
         scanner.close();
     }
+
 
     // Method to view an employee by ID
     public Employee viewEmployee(int employeeId) {
