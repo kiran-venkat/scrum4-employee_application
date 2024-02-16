@@ -15,33 +15,31 @@ public class EmsService {
 //<<<<<<< HEAD
 //    private Map<Integer,Employee> employeeList;
 //=======
-    private LinkedList<Employee> employeeList;
+    private static LinkedList<Employee> employeeList = new LinkedList<Employee>();
     public Employee emp = new Employee();
 //>>>>>>> 2f6082e790367ba51e2cb004cbf72c6b05cc0678
 
     public EmsService() {
-        this.employeeList = new LinkedList<>(); // Use LinkedList here
+        // Use LinkedList here
 
-        // Adding dummy employees
-        addDummyEmployees();
+        
     }
-
-    // Method to add dummy employees
-    private void addDummyEmployees() {
-        // Employee 1
-        EmployeeInfo info1 = new EmployeeInfo(1, "John Doe", "5000", 30, "ABC Corp", "XYZ Ltd");
+    
+    static {
+    	EmployeeInfo info1 = new EmployeeInfo(3, "John Doe", "5000", 30, "ABC Corp", "XYZ Ltd");
         EmployeeAddressDetails address1 = new EmployeeAddressDetails(123, "Main St", "City", "State", "Country", 12345);
         Employee employee1 = new Employee(info1, address1);
         employeeList.add(employee1);
 
         // Employee 2
-        EmployeeInfo info2 = new EmployeeInfo(2, "Jane Smith", "6000", 35, "DEF Corp", "PQR Ltd");
+        EmployeeInfo info2 = new EmployeeInfo(2, "ane Smith", "6000", 35, "DEF Corp", "PQR Ltd");
         EmployeeAddressDetails address2 = new EmployeeAddressDetails(456, "Oak St", "City", "State", "Country", 67890);
         Employee employee2 = new Employee(info2, address2);
         employeeList.add(employee2);
-
-        // Add more dummy employees as needed
     }
+
+    // Method to add dummy employees
+    
 
     // Method to add an employee
 //<<<<<<< HEAD
@@ -228,8 +226,8 @@ public class EmsService {
         for (Employee employee : employeeList){
 //        	Employee emp=new Employee();
 //        	 emp=employeeList.get(employee);
-            if (employee.getId() == employeeId) {
-                return emp;
+            if (employee.getInfo().getId() == employeeId) {
+                return employee;
             }
         }
         return null; // Employee not found
@@ -246,6 +244,11 @@ public class EmsService {
 
     // Method to sort employees by name
     public void sortEmployeesByName() {
-       // Collections.sort(employeeList, (e1, e2) -> e1.getName().compareToIgnoreCase(e2.getName()));
+      Collections.sort(employeeList, (e1, e2) -> e1.getName().compareToIgnoreCase(e2.getName()));
     }
+    
+    public void sortEmployeesByID() {
+        Collections.sort(employeeList, (e1, e2) -> Integer.compare(e1.getId(), e2.getId()));
+    }
+
 }

@@ -35,6 +35,7 @@ public class EmsExecuter {
 				System.out.println("3.View Employee Details");
 				System.out.println("4.View All Employee Details");
 				System.out.println("5.Sort Employee Details");
+				System.out.println("6.Log out");
 				System.out.println("Enter your Choice");
 				int serviceChoice=sc.nextInt();
 				switch(serviceChoice)
@@ -86,7 +87,17 @@ public class EmsExecuter {
 				
 					
 				case 5:
-					service.sortEmployeesByName();
+					String input;
+					
+					System.out.println("Enter how to sort {Name/Id]");
+					input=sc.next();
+					if(input.equalsIgnoreCase("name"))
+						service.sortEmployeesByName();
+					else if(input.equalsIgnoreCase("ID"))
+						service.sortEmployeesByID();
+					else
+						System.out.println("Invalid Choice");
+					
 					LinkedList<Employee> employeeDetails1 = service.viewAllEmployees();
 					
 					// Check if the list is not empty
@@ -106,17 +117,24 @@ public class EmsExecuter {
 					}
 
 					break;
+				case 6:
+					System.out.println("Do u want to login in again");
+					char choice=sc.next().charAt(0);
+					if(choice=='y')
+					{
+						flag=true;
+						break;
+					}
+					else {
+						System.exit(0);
+					}
+					
 				}
 				
 				
 				
 			}
-			System.out.println("Do u want to login in again");
-			char choice=sc.next().charAt(0);
-			if(choice=='y')
-			{
-				flag=true;
-			}
+			
 				}
 			catch(UnauthorizedException exception)
 			{
