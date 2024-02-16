@@ -45,13 +45,71 @@ public class EmsExecuter {
 					service.addEmployee(employee);
 					break;
 				case 2:
+					System.out.println("Enter the Employees ID to be updated");
+					int employeeId=sc.nextInt();
+					service.updateEmployee(employeeId);
 					
 					break;
 				case 3:
+					System.out.println("Enter the Employees ID to be updated");
+					int searchEmployeeID=sc.nextInt();
+					service.viewEmployee(searchEmployeeID);
 					break;
 				case 4:
+					LinkedList<Employee> employeeDetails = service.viewAllEmployees();
+					
+					// Check if the list is not empty
+					if (!employeeDetails.isEmpty()) {
+						// Iterate over the list and display details of each employee
+						for (Employee employeeDet : employeeDetails) {
+							System.out.println("Employee ID: " + employeeDet.getInfo().getId());
+							System.out.println("Employee Name: " + employeeDet.getInfo().getName());
+							System.out.println("Employee Salary: " + employeeDet.getInfo().getSalary());
+							System.out.println("Employee Age: " + employeeDet.getInfo().getAge());
+							System.out.println("Employee Current Company: " + employeeDet.getInfo().getCurrentCompany());
+							System.out.println("Employee Previous Company: " + employeeDet.getInfo().getPrevCompany());
+							System.out.println("Employee Address Details:");
+							System.out.println("Door No: " + employeeDet.getAddress().getDoorNo());
+							System.out.println("Street: " + employeeDet.getAddress().getStreet());
+							System.out.println("City: " + employeeDet.getAddress().getCity());
+							System.out.println("State: " + employeeDet.getAddress().getState());
+							System.out.println("Country: " + employeeDet.getAddress().getCountry());
+							System.out.println("Pin Code: " + employeeDet.getAddress().getPinCode());
+							System.out.println(); // Add an empty line for better readability
+						}
+					} else {
+						System.out.println("No employees found.");
+					}
 					break;
+				
+					
 				case 5:
+					service.sortEmployeesByName();
+					LinkedList<Employee> employeeDetails1 = service.viewAllEmployees();
+					
+					// Check if the list is not empty
+					if (!employeeDetails1.isEmpty()) {
+						// Iterate over the list and display details of each employee
+						for (Employee employeeDet : employeeDetails1) {
+							System.out.println("Employee ID: " + employeeDet.getInfo().getId());
+							System.out.println("Employee Name: " + employeeDet.getInfo().getName());
+							System.out.println("Employee Salary: " + employeeDet.getInfo().getSalary());
+							System.out.println("Employee Age: " + employeeDet.getInfo().getAge());
+							System.out.println("Employee Current Company: " + employeeDet.getInfo().getCurrentCompany());
+							System.out.println("Employee Previous Company: " + employeeDet.getInfo().getPrevCompany());
+							System.out.println("Employee Address Details:");
+							System.out.println("Door No: " + employeeDet.getAddress().getDoorNo());
+							System.out.println("Street: " + employeeDet.getAddress().getStreet());
+							System.out.println("City: " + employeeDet.getAddress().getCity());
+							System.out.println("State: " + employeeDet.getAddress().getState());
+							System.out.println("Country: " + employeeDet.getAddress().getCountry());
+							System.out.println("Pin Code: " + employeeDet.getAddress().getPinCode());
+							System.out.println(); // Add an empty line for better readability
+						}
+					} else {
+						System.out.println("No employees found.");
+					}
+
 					break;
 				}
 				
