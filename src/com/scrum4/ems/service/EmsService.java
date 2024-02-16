@@ -5,21 +5,22 @@ import com.scrum4.ems.employee.EmployeeAddressDetails;
 import com.scrum4.ems.employee.EmployeeInfo;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class EmsService {
 
-    private List<Employee> employeeList;
+    private Map<Integer,Employee> employeeList;
 
     public EmsService() {
-        this.employeeList = new LinkedList<>(); // Use LinkedList here
+        this.employeeList = new HashMap<>(); // Use LinkedList here
     }
 
     // Method to add an employee
-    public void addEmployee(Employee employee) {
-        employeeList.add(employee);
+    public void addEmployee(Employee employee,EmployeeInfo empInfo) {
+        employeeList.put(empInfo.getId(),employee);
     }
 
     // Method to update an employee
@@ -94,21 +95,23 @@ public class EmsService {
 
     // Method to view an employee by ID
     public Employee viewEmployee(int employeeId) {
-        for (Employee employee : employeeList) {
-            if (employee.getId() == employeeId) {
-                return employee;
+        for (Integer employee : employeeList.keySet()) {
+        	Employee emp=new Employee();
+        	 emp=employeeList.get(employee);
+            if (emp.getId() == employeeId) {
+                return emp;
             }
         }
         return null; // Employee not found
     }
 
     // Method to view all employees
-    public List<Employee> viewAllEmployees() {
+    public Map<Integer,Employee> viewAllEmployees() {
         return employeeList;
     }
 
     // Method to sort employees by name
     public void sortEmployeesByName() {
-        Collections.sort(employeeList, (e1, e2) -> e1.getName().compareToIgnoreCase(e2.getName()));
+       // Collections.sort(employeeList, (e1, e2) -> e1.getName().compareToIgnoreCase(e2.getName()));
     }
 }

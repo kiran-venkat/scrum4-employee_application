@@ -42,7 +42,7 @@ public class EmsExecuter {
 				case 1:
 					
 					Employee employee=new Employee(empInfo,empAddress);
-					service.addEmployee(employee);
+					service.addEmployee(employee,empInfo);
 					break;
 				case 2:
 					

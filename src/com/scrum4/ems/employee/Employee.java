@@ -5,6 +5,10 @@ public class Employee {
     private EmployeeAddressDetails address;
 
     // Constructor
+    public Employee() {
+    	
+    }
+    
     public Employee(EmployeeInfo info, EmployeeAddressDetails address) {
         this.info = info;
         this.address = address;
