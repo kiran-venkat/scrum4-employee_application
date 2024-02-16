@@ -43,7 +43,6 @@ public class EmsService {
         }
     }
 
-    // Method to update employee info
  // Method to update employee info
     private void updateEmployeeInfo(EmployeeInfo info) {
         Scanner scanner = new Scanner(System.in);
@@ -89,7 +88,6 @@ public class EmsService {
     }
 
     // Method to update employee address details
- // Method to update employee address details
     private void updateEmployeeAddress(EmployeeAddressDetails address) {
         Scanner scanner = new Scanner(System.in);
 
