@@ -10,6 +10,15 @@ public class Employee {
         this.address = address;
     }
 
+    public EmployeeInfo getInfo() {
+        return info;
+    }
+
+    public EmployeeAddressDetails getAddress() {
+        return address;
+    }
+
+    
     // Getter and Setter methods for EmployeeInfo
     public int getId() {
         return info.getId();
