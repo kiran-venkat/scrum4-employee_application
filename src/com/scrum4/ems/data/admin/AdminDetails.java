@@ -9,7 +9,7 @@ public class AdminDetails {
      static {
     	 AdminDetails admin_1=new AdminDetails(001,"Nivetha","nivi@23","Admin_ALL");
     	 AdminDetails admin_2=new AdminDetails(002,"Roshan","roshan@23","Admin_VIEW");
-    	 AdminDetails admin_3=new AdminDetails(003,"Kiren","kiren@23","Admin_VIEW");
+    	 AdminDetails admin_3=new AdminDetails(003,"Kiran","kiran@23","Admin_VIEW");
     	 adminDetails.add(admin_1);
     	 adminDetails.add(admin_2);
     	 adminDetails.add(admin_3);
