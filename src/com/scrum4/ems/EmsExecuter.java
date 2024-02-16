@@ -18,9 +18,10 @@ public class EmsExecuter {
 			System.out.println("Enter your password:");
 			adminPassword=sc.next();
 			
-			AdminDetails details=new AdminDetails();
+			
 			try {
-			if(!adminVerification(adminName,adminPassword))
+			AdminDetails detail=adminVerification(adminName, adminPassword);
+			if(adminVerification(adminName,adminPassword)==null)
 			{
 				throw new UnauthorizedException("Unauthorized adminName and password");
 			}
@@ -41,16 +42,31 @@ public class EmsExecuter {
 				switch(serviceChoice)
 				{
 				case 1:
-					
+					try{
+						if (detail.getAdminRole()=="Admin_ALL"){
 					Employee employee=new Employee(empInfo,empAddress);
 					service.addEmployee(employee);
 					break;
+					} else {
+						throw new UnauthorizedException("Access denied for this admin");
+					}
+				} catch (UnauthorizedException e){
+					e.getMessage();
+				}
 				case 2:
+				try{
+					if (detail.getAdminRole()=="Admin_ALL"){
 					System.out.println("Enter the Employees ID to be updated");
 					int employeeId=sc.nextInt();
 					service.updateEmployee(employeeId);
 					
 					break;
+				} else {
+					throw new UnauthorizedException("Access denied for this admin");
+				}
+			} catch (UnauthorizedException e){
+				e.getMessage();
+			}
 				case 3:
 				    System.out.println("Enter the Employees ID to be searched");
 				    int searchEmployeeID = sc.nextInt();
@@ -87,6 +103,8 @@ public class EmsExecuter {
 				
 					
 				case 5:
+				try{
+					if (detail.getAdminRole()=="Admin_ALL"){
 					String input;
 					
 					System.out.println("Enter how to sort {Name/Id]");
@@ -117,6 +135,12 @@ public class EmsExecuter {
 					}
 
 					break;
+				} else {
+					throw new UnauthorizedException("Access denied for this admin");
+				}
+			} catch (UnauthorizedException e){
+				e.getMessage();
+			}
 				case 6:
 					System.out.println("Do u want to login in again");
 					char choice=sc.next().charAt(0);
@@ -143,16 +167,16 @@ public class EmsExecuter {
 			}while(flag);
 		
 	}
-	static boolean adminVerification(String adminName,String adminPassword)
+	static AdminDetails adminVerification(String adminName,String adminPassword)
 	{
 		for(AdminDetails list:AdminDetails.adminDetails)
 		{
 			if(list.getAdminName().equals(adminName) && list.getAdminPassword().equals(adminPassword))
 			{
-				return true;
+				return list;
 			}
 		}
-		return false;
+		return null;
 	}
 
 }

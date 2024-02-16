@@ -14,7 +14,13 @@ public class AdminDetails {
     	 adminDetails.add(admin_2);
     	 adminDetails.add(admin_3);	 
      }
-     public AdminDetails()
+     public static ArrayList<AdminDetails> getAdminDetails() {
+		return adminDetails;
+	}
+
+	
+
+	public AdminDetails()
      {
     	 
      }
