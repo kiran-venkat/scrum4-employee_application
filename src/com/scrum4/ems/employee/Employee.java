@@ -10,6 +10,11 @@ public class Employee {
         this.address = address;
     }
 
+    public Employee(){
+        this.info = info;
+        this.address = address;
+    }
+
     public EmployeeInfo getInfo() {
         return info;
     }
@@ -115,5 +120,13 @@ public class Employee {
 
     public void setPinCode(int pinCode) {
         address.setPinCode(pinCode);
+    }
+
+    public Employee getEmployeeById(int employeeId) {
+        if (this.info.getId() == employeeId) {
+            return this;
+        } else {
+            return null;
+        }
     }
 }

@@ -11,7 +11,8 @@ import java.util.Scanner;
 
 public class EmsService {
 
-    private List<Employee> employeeList;
+    private LinkedList<Employee> employeeList;
+    public Employee emp = new Employee();
 
     public EmsService() {
         this.employeeList = new LinkedList<>(); // Use LinkedList here
@@ -23,25 +24,35 @@ public class EmsService {
     }
 
     // Method to update an employee
-    public void updateEmployee(Employee employee) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Choose what you want to update:");
-        System.out.println("1. Employee info");
-        System.out.println("2. Address details");
-        int choice = scanner.nextInt();
-
-        switch (choice) {
-            case 1:
-                updateEmployeeInfo(employee.getInfo());
-                break;
-            case 2:
-                updateEmployeeAddress(employee.getAddress());
-                break;
-            default:
-                System.out.println("Invalid choice.");
+    
+        public void updateEmployee(int employeeId) {
+            // Assuming 'service' is an instance of your service class
+            Employee employee = emp.getEmployeeById(employeeId);
+    
+            if (employee != null) {
+                Scanner scanner = new Scanner(System.in);
+    
+                System.out.println("Choose what you want to update:");
+                System.out.println("1. Employee info");
+                System.out.println("2. Address details");
+                int choice = scanner.nextInt();
+    
+                switch (choice) {
+                    case 1:
+                        updateEmployeeInfo(employee.getInfo());
+                        break;
+                    case 2:
+                        updateEmployeeAddress(employee.getAddress());
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+            } else {
+                System.out.println("Employee not found.");
+            }
         }
-    }
+    
+    
 
  // Method to update employee info
     private void updateEmployeeInfo(EmployeeInfo info) {
@@ -147,7 +158,7 @@ public class EmsService {
     }
 
     // Method to view all employees
-    public List<Employee> viewAllEmployees() {
+    public LinkedList<Employee> viewAllEmployees() {
         return employeeList;
     }
 
